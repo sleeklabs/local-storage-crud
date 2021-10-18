@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline Students</title>
+</head>
+<body>
+    <h1>Offline Data</h1>
+    <p>
+        <a href="index.html">Add More Data</a> 
+        <a href="javascript:void(0)" onclick="synchronizeAll()">Synchronize All</a>
+    </p>
+
+    <div id="data-container"></div>
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        /* Display Offline data on the page */
+        divData = ""; // data container initialization
+        for(i=0; i < studentsInfo.length; i++) {
+            
+            divData+= "<div><p>";
+            divData+= "<b>Name:</b>";
+            divData+= "<span>" + studentsInfo[i].firstname + "</span> <span>" + studentsInfo[i].lastname + "</span><br>";
+            divData+= "<b>School:</b><span>" + studentsInfo[i].school + "</span> | ";
+            divData+= "<b>Country:</b><span>" + studentsInfo[i].country + "</span><br>"
+            divData+= "<b>Actions:</b>";
+            divData+= '<a href="#' + i + '" onclick="synchronizeOne('+ i + ')">Synchronize</a> '; // Synchronize Action
+            divData+= ' <a href="#' + i + '" onclick="deleteStudentInfo(' + i + ')">Delete</a> '; // Delete Action
+            divData+= ' <a href="#' + i + '" onclick="editStudentInfo(' + i + ')">Edit</a>'; // Edit Action
+            divData+= "</p><hr></div>";
+
+        }
+
+        $('#data-container').html(divData); // update html content
+        
+    </script>
+</body>
+</html>

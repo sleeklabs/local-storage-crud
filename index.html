@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline Storage</title>
+</head>
+<body>
+    <h1>Offline Storage</h1>
+    <form id="studentForm">
+        <p><input type="text" id="firstname" name="firstname" placeholder="Firstname" required></p>
+        <p><input type="text" id="lastname" name="lastname" placeholder="Lastname" required></p>
+        <p><input type="text" id="school" name="school" placeholder="School or University" required></p>
+        <p><input type="text" id="country" name="country" placeholder="Country" required></p>
+        <p><input type="submit" id="submit" name="submit" value="Add Student"></p>
+    </form>
+
+    <hr>
+    <p><a href="offline.html">View Offline Data</a></p>
+    <!-- <button onclick="alertMe()">Alert Me</button>
+    <button onclick="getLocalData('allUsers')">Get Local Data</button> -->
+    <button onclick="getLocalData('studentsInfo')">Get Local Data</button>
+
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
